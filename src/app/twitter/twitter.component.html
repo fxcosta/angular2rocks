@@ -1,5 +1,16 @@
-<p>
-  twitter works! Its awesome!
-</p>
+<div class="ui grid">
+  <div class="ui input focus">
+  <label for="commentField">Send your tweet</label>
+  <textarea #tweeted [value]="" placeholder="" id="commentField"></textarea>
+  </div>
+  <input class="button-primary float-right" value="Tweet!" type="submit" (click)="onTweet(tweeted)">
 
-<p>@fxcosta</p>
+  <div class="clearfix"></div>
+
+  <div class="list-group">
+    <a *ngFor="let tweet of tweets" href="#" class="list-group-item">
+      <h4 class="list-group-item-heading">{{ tweet.date }}</h4>
+      <h3 class="list-group-item-text">{{ tweet.value }}</h3>
+    </a>
+  </div>
+</div>

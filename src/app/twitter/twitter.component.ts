@@ -8,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 
 export class TwitterComponent implements OnInit {
 
-  constructor() { }
+  public tweets: Object[] = [];
 
-  ngOnInit() {}
+  constructor() {
+  }
+
+  onTweet(tweet: HTMLInputElement) {
+    this.tweets.push({ value: tweet.value, date: new Date()});
+    tweet.value = null;
+  }
+
+  ngOnInit() { }
 }
