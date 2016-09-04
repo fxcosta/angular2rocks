@@ -1,16 +1,35 @@
-<div class="ui grid">
-  <div class="ui input focus">
-  <label for="commentField">Send your tweet</label>
-  <textarea #tweeted [value]="" placeholder="" id="commentField"></textarea>
+<div class="ui raised very padded text container segment form">
+  <h2 class="ui header">Que tal um twitter novo?</h2>
+  <div class="field">
+    <div class="ui fluid action input focus">
+      <textarea #tweeted [value]="" placeholder="" id="commentField"></textarea>
+    </div>
   </div>
-  <input class="button-primary float-right" value="Tweet!" type="submit" (click)="onTweet(tweeted)">
+  <button class="ui submit primary button right floated" type="submit" (click)="onTweet(tweeted)">Tweet</button>
 
-  <div class="clearfix"></div>
+  <div class="ui items">
 
-  <div class="list-group">
-    <a *ngFor="let tweet of tweets" href="#" class="list-group-item">
-      <h4 class="list-group-item-heading">{{ tweet.date }}</h4>
-      <h3 class="list-group-item-text">{{ tweet.value }}</h3>
-    </a>
-  </div>
+    <div class="item" *ngFor="let tweet of tweets">
+      <a class="ui tiny image">
+        <img src="http://lorempixel.com/650/650/people/">
+      </a>
+      <div class="content">
+        <a class="header">Stevie Feliciano, {{ tweet.date }}</a>
+        <div class="description">
+          <p>{{ tweet.value }}</p>
+        </div>
+      </div>
+    </div>
 </div>
+
+
+<sm-modal title="Hello from Modal" class="" icon="home" #myModalNormal *ngIf="hideElement">
+    <modal-content>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    </modal-content>
+    <modal-actions>
+        <div class="ui buttons">
+            <div class="ui button primary" (click)="myModalNormal.hide()">Close modal</div>
+        </div>
+    </modal-actions>
+</sm-modal>

@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "2.0.0-rc.5",
     "@angular/router": "3.0.0-rc.1",
     "core-js": "^2.4.0",
+    "ng-semantic": "^1.1.1",
     "rxjs": "5.0.0-beta.11",
     "semantic-ui": "^2.2.4",
     "ts-helpers": "^1.1.1",

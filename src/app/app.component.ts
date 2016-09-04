@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'My own Twitter made with Angular 2 RC5';
+  // title = 'My own Twitter made with Angular 2 RC5';
 }

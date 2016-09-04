@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+
+import { NgSemanticModule } from "ng-semantic";
 
 @Component({
   selector: 'app-twitter',
@@ -9,8 +11,13 @@ import { Component, OnInit } from '@angular/core';
 export class TwitterComponent implements OnInit {
 
   public tweets: Object[] = [];
+  public name: string;
+
+  public hideElement: boolean;
+
 
   constructor() {
+
   }
 
   onTweet(tweet: HTMLInputElement) {
@@ -18,5 +25,8 @@ export class TwitterComponent implements OnInit {
     tweet.value = null;
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.hideElement = true;
+  }
+
 }
