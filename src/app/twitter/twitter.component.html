@@ -14,22 +14,35 @@
         <img src="http://lorempixel.com/650/650/people/">
       </a>
       <div class="content">
-        <a class="header">Stevie Feliciano, {{ tweet.date }}</a>
+        <a class="header">{{ nameUser.value }}, {{ tweet.date }}</a>
         <div class="description">
           <p>{{ tweet.value }}</p>
         </div>
       </div>
     </div>
-</div>
+  </div>
 
+  <!-- <h2 #myModalNormal></h2> -->
 
-<sm-modal title="Hello from Modal" class="" icon="home" #myModalNormal *ngIf="hideElement">
+  <!-- <button class="ui button primary" (click)="myModalNormal.show({inverted: true})">Click me</button> -->
+  <sm-modal title="Olá, bem-vindo!" class="" icon="home" #myModalNormal>
     <modal-content>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+
+      <div class="ui warning message" *ngIf="messageModal">
+        <i class="close icon"></i>
+        <div class="header">  
+          {{messageModal}}
+        </div>
+      </div>
+
+      <p>Para podermos começar, precisamos de um nome de usuário seu. Pode ser um nome fictício qualquer.</p>
+      <div class="ui fluid icon input">
+        <input placeholder="Nós conte como se chamará..." type="text" #nameUser>
+      </div>
     </modal-content>
     <modal-actions>
-        <div class="ui buttons">
-            <div class="ui button primary" (click)="myModalNormal.hide()">Close modal</div>
-        </div>
+      <div class="ui buttons">
+        <div class="ui button primary" (click)="saveNameAndCloseModal(nameUser.value)">Vamos começar!</div>
+      </div>
     </modal-actions>
-</sm-modal>
+  </sm-modal>
